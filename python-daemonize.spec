@@ -3,26 +3,19 @@
 
 Name:           python-%{pypi_name}
 Version:        2.5.0
-Release:        %mkrel 4
+Release:        1
 Summary:        Library to enable your code run as a daemon process on Unix-like systems
 Group:          Development/Python
 License:        MIT
 URL:            https://github.com/thesharp/daemonize
-Source0:        %{pypi_source}
+Source0:        https://pypi.io/packages/source/d/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
 BuildArch:      noarch
 
-BuildRequires:  python3-devel
+BuildRequires:  python-devel
 BuildRequires:  python3dist(setuptools)
 BuildRequires:  python3dist(sphinx)
 
 %description
-Daemonize is a library for writing system daemons in Python.
-
-%package -n     python3-%{pypi_name}
-Summary:        %{summary}
-%{?python_provide:%python_provide python3-%{pypi_name}}
-
-%description -n python3-%{pypi_name}
 Daemonize is a library for writing system daemons in Python.
 
 %prep
@@ -32,7 +25,7 @@ Daemonize is a library for writing system daemons in Python.
 rm -rf *.egg-info
 
 %build
-%py3_build
+%py_build
 
 # generate html docs
 PYTHONPATH=${PWD} sphinx-build-3 docs html
@@ -40,9 +33,9 @@ PYTHONPATH=${PWD} sphinx-build-3 docs html
 rm -rf html/.{doctrees,buildinfo}
 
 %install
-%py3_install
+%py_install
 
-%files -n python3-%{pypi_name}
+%files
 %license LICENSE
 %doc README.rst
 %doc html
