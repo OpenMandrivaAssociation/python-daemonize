@@ -13,7 +13,7 @@ BuildArch:      noarch
 
 BuildRequires:  python-devel
 BuildRequires:  python3dist(setuptools)
-BuildRequires:  python3dist(sphinx)
+#BuildRequires:  python3dist(sphinx)
 
 %description
 Daemonize is a library for writing system daemons in Python.
@@ -26,11 +26,6 @@ rm -rf *.egg-info
 
 %build
 %py_build
-
-# generate html docs
-PYTHONPATH=${PWD} sphinx-build-3 docs html
-# remove the sphinx-build leftovers
-rm -rf html/.{doctrees,buildinfo}
 
 %install
 %py_install
