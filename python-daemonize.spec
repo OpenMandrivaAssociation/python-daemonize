@@ -33,7 +33,5 @@ rm -rf *.egg-info
 %files
 %license LICENSE
 %doc README.rst
-%doc html
-%{python3_sitelib}/__pycache__/*
-%{python3_sitelib}/%{pypi_name}.py
-%{python3_sitelib}/%{pypi_name}-%{version}-py%{python3_version}.egg-info
+%{python_sitelib}/%{pypi_name}.py
+%{python_sitelib}/%{pypi_name}-%{version}-py%{python_version}.egg-info
