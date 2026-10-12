@@ -3,7 +3,7 @@
 
 Name:           python-%{pypi_name}
 Version:        2.5.0
-Release:        2
+Release:        3
 Summary:        Library to enable your code run as a daemon process on Unix-like systems
 Group:          Development/Python
 License:        MIT
